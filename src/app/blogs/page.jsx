@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const BlogsPage = () => {
   const blogData = [
     {
@@ -56,7 +58,11 @@ const BlogsPage = () => {
       {blogData.map((blog) => (
         <div key={blog.id}>
           {" "}
-          <h2 className="text-4xl font-bold mb-4">{blog.title}</h2>{" "}
+          <h2 className="text-4xl font-bold mb-4">{blog.title}</h2>
+          <Link href={`/blogs/${blog.id}`}>
+            Show details: {blog.description}
+          </Link>
+          <p>Autor: {blog.author}</p>{" "}
         </div>
       ))}
     </div>
